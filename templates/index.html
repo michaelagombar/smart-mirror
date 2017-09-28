@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mirror</title>
+    <link rel="stylesheet" href="..\static\css\home.css">
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="boxTopLeft">
+            <p>The Low for today is: {{tempLow_faren}}</p>
+            <p>It is currently: {{tempCur_faren}}</p>
+            <p>The High for today is {{tempHigh_faren}}</p>
+        </div>
+                   <div class="boxTopRight">
+            <div id="times">
+                <h1 id="currentTime"></h1>
+                <p>{{date}}</p>
+            </div>
+        </div>
+        <div class="boxBottomRight">
+             {% for msg in content %}
+                    {{ msg }}<br><br>
+                {% endfor %}
+
+        </div>
+        <div class="boxBottomLeft">
+            {% for msg1 in content1 %}
+                    {{ msg1 }}<br><br>
+                {% endfor %}
+        </div>
+
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+window.onload = function() {
+
+  clock();
+
+    function clock() {
+    var now = new Date();
+    var TwentyFourHour = now.getHours();
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    var mid = 'pm';
+    if (min < 10) {
+      min = "0" + min;
+    }
+
+    if (hour > 12) {
+      hour = hour - 12;
+    }
+
+    if(hour==0){
+      hour=12;
+    }
+
+    if(TwentyFourHour < 12) {
+       mid = 'am';
+    }
+
+    //must create an html element here and change "currentTime" to the html element I create
+    document.getElementById('currentTime').innerHTML = hour+':'+min + mid ;
+    setTimeout(clock, 1000);
+  }
+}
+</script>
+
+</html>

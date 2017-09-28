@@ -1,0 +1,41 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+.topLeft {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+
+
+.topRight {
+    grid-row: 1;
+    grid-column: 2;
+    text-align: center;
+}
+
+.times {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.bottomLeft {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.bottomRight {
+    grid-row: 2;
+    grid-column: 2;
+}
